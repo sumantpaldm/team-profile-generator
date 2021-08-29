@@ -21,20 +21,20 @@ let team = [];
 
 //manager info
 const createManager = () => {
-    console.log(`    ==========
+    console.log(`    ====================
     Input Manager's Info
-    ==========`);
+    ====================`);
     inquirer
         .prompt([
             {
                 type: "text",
                 name: "name",
-                message: "Enter your name (Required)",
+                message: "Enter manager's name (Required)",
                 validate: (name) => {
                     if (name) {
                         return true;
                     } else {
-                        console.log("Please enter your name!");
+                        console.log("Please enter  name!");
                         return false;
                     }
                 },
@@ -42,12 +42,12 @@ const createManager = () => {
             {
                 type: "text",
                 name: "id",
-                message: "Enter your employeed id (Required)",
+                message: "Enter manager's employeed id (Required)",
                 validate: (id) => {
                     if (id) {
                         return true;
                     } else {
-                        console.log("Please enter your employee id!");
+                        console.log("Please enter  employee id!");
                         return false;
                     }
                 },
@@ -55,25 +55,25 @@ const createManager = () => {
             {
                 type: "text",
                 name: "email",
-                message: "Enter your email (Required)",
+                message: "Enter manager's email (Required)",
                 validate: (email) => {
                     if (email) {
                         return true;
                     } else {
-                        console.log("Please enter your email!");
+                        console.log("Please enter  email!");
                         return false;
                     }
                 },
             },
             {
                 type: "text",
-                name: "officeNumber",
-                message: "Enter your office number (Required)",
+                name: "officeNmb",
+                message: "Enter manager's office number (Required)",
                 validate: (officeNmb) => {
                     if (officeNmb) {
                         return true;
                     } else {
-                        console.log("Please enter your office number!");
+                        console.log("Please enter  office number!");
                         return false;
                     }
                 },
@@ -94,9 +94,9 @@ createManager();
 
 //engineer info
 createEngineer = () => {
-    console.log(`    ==========
+    console.log(`    ====================
     Adding Engineer Info
-    ==========`);
+    ====================`);
     inquirer
         .prompt([
             {
@@ -165,14 +165,14 @@ createEngineer = () => {
 
 //intern info
 createIntern = () => {
-    console.log(`    ==========
+    console.log(`    ====================
     Adding Intern Info
-    ==========`);
+    ====================`);
     inquirer
         .prompt([
             {
                 type: "text",
-                name: "intName",
+                name: "internName",
                 message: "Enter intern's name (Required)",
                 validate: (internName) => {
                     if (internName) {
@@ -241,7 +241,7 @@ selector = () => {
             type: "list",
             message: "What would you like to do?",
             name: "position",
-            choices: ["Engineer", "Intern", "Finished"],
+            choices: ["Engineer", "Intern", "Finish"],
         })
         .then((data) => {
             switch (data.position) {
@@ -253,7 +253,7 @@ selector = () => {
                     createIntern();
                     break;
                 }
-                default:
+                case "Finish":
                     generateHTML();
             }
         });
@@ -267,7 +267,8 @@ selector = () => {
 let generateHTML = () => {
     console.log("========       DONE!        =========")
     console.log(team)
+    console.log("+++++++++++++        PLEASE FIND THE HTML FILE IN DIST FOLDER       +++++++++++")
 
-    // fs.writeFileSync(finalPath, htmlTemplate(team), "utf-8");
+    fs.writeFileSync(finalPath, htmlTemplate(team), "utf-8");
 };
 
