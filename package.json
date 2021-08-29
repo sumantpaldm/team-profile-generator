@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-generator",
+  "version": "1.0.0",
+  "description": "10. Object-Oriented Programming Challenge: Team Profile Generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumantpaldm/team-profile-generator.git"
+  },
+  "author": "Sumant Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumantpaldm/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/sumantpaldm/team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "jest": "^27.1.0"
+  }
+}
